@@ -189,4 +189,9 @@ resource "aws_ecs_service" "app" {
     container_name   = var.app_name
     container_port   = var.container_port
   }
+
+  # Prevent Terraform from overriding autoscaling-managed task count
+  lifecycle {
+    ignore_changes = [desired_count]
+  }
 }
