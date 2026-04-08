@@ -192,6 +192,6 @@ resource "aws_ecs_service" "app" {
 
   # Prevent Terraform from overriding autoscaling-managed task count
   lifecycle {
-    ignore_changes = [desired_count]
+    ignore_changes = [desired_count, task_definition]
   }
 }
