@@ -1,0 +1,17 @@
+# Node dependencies
+node_modules/
+
+# Build outputs
+build/
+
+# Terraform local state
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfplan
+.terraform.lock.hcl
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

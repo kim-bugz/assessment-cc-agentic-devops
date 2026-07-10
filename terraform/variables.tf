@@ -14,6 +14,11 @@ variable "container_image" {
   type        = string
   description = "ECR image URI"
   default     = "123456789012.dkr.ecr.us-east-1.amazonaws.com/rdicidr:latest"
+
+  validation {
+    condition     = length(var.container_image) > 0
+    error_message = "container_image must be provided and cannot be empty."
+  }
 }
 
 variable "container_port" {
